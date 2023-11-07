@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padel Ranking Estimator</title>
+</head>
+<body>
+    <center>
+        <h1>Enter the details from last 365 days</h1>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <div style="width:500px; margin:auto; background-color:#eee">
+                <label for="2020_Torneos ganados" style="font-weight:700">Won tournaments</label><br>
+                <input type="number" name="2020_Torneos ganados" id="2020_Torneos ganados" min="0">
+                <br><br>
+        
+                <label for="2020_Finales" style="font-weight:700">Finals reached</label><br>
+                <input type="number" name="2020_Finales" id="2020_Finales" min="0">
+                <br><br>
+
+            <label for="2020_Rendimiento" style="font-weight:700">Win rate (0-1)</label><br>
+            <input type="number" name="2020_Rendimiento" id="2020_Rendimiento" step="0.01" min="0" max="1">
+            <br><br>
+
+            <label for="partidosganados" style="font-weight:700">Total won matches from 2013</label><br>
+            <input type="number" name="partidosganados" id="partidosganados" min="0">
+            <br><br>
+
+            <input type="submit" value="Submit" class="btn btn-primary|secondary|success|danger|warning|info|light|dark|link">
+            <br><br>
+
+                <h2>{{ result }}</h2>
+            </div>
+        </form>
+    </center>
+</body>
+</html>
