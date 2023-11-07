@@ -24,42 +24,42 @@ Ensure that you have the following prerequisites installed on your system:
 Docker: Download and install Docker from its official website: https://www.docker.com/products/docker-desktop/
 
 **Step 1**: Clone the Dare Data Challenge repository to your local machine using the following command:
-git clone https://github.com/FCisco95/daredatachallenge
+`git clone https://github.com/FCisco95/daredatachallenge`
 
 Navigate to the cloned repository directory:
-cd DareDataChallenge
+`cd DareDataChallenge`
 
 **Step 2**: Build the Docker image using the following command in the repository directory:
-docker build -t joaovieira-challenge-postgres -f modules/de/docker/Dockerfile .
+`docker build -t joaovieira-challenge-postgres -f modules/de/docker/Dockerfile .`
 
 **Step 3**: Launch the Docker container for the PostgreSQL database using the following command:
-docker run --name daredata-postgres-container -p 5432:5432 -d joaovieira-challenge-postgres
+`docker run --name daredata-postgres-container -p 5432:5432 -d joaovieira-challenge-postgres`
 
 **Step 4**: Use the psql command to connect to the PostgreSQL database server running in the Docker container:
-docker exec -it daredata-postgres-container psql -U admin -d daredatachallenge
+`docker exec -it daredata-postgres-container psql -U admin -d daredatachallenge`
 
 **Step 5**: Install Dependencies. Navigate to the ds folder within the repository directory.
 Execute the following commands to install the required dependencies:
-python setup.py sdist bdist_wheel
-pip install .
+`python setup.py sdist bdist_wheel`
+`pip install .`
 
 **Step 6**: Install Deployment Requirements
 Navigate to the deployment folder within the repository directory.
 Install the deployment requirements using the following command:
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 **Step 7**: Train the Model
 From the deployment folder, run the following command to train the predictive model and generate the model.pkl file:
-python train_model.py
+`python train_model.py`
 
 **Step 8**: Deploy the API
 From the deployment folder, execute the following command to start the API:
-python app.py
+`python app.py`
 
 **Step 9**: Access the API
 
 Open your web browser and navigate to the following URL to interact with the deployed API:
-http://ec2-174-129-115-238.compute-1.amazonaws.com:5001
+`http://ec2-174-129-115-238.compute-1.amazonaws.com:5001`
 This should display the API's index page, similar to the one provided in the tutorial.
 
 
@@ -74,10 +74,10 @@ Had several dificulties managing to start the container, moving the initializati
 I used a psql command to connect to the PostgreSQL database server and the program DBeaver to connect to the container and query the databset.
 
 Commands used:
-    cd /path/to/Dare Data Challenge
+    `cd /path/to/Dare Data Challenge
     docker build -t joaovieira-challenge-postgres -f modules/de/docker/Dockerfile .
     docker run --name daredata-postgres-container -p 5432:5432 -d joaovieira-challenge-postgres
-    docker exec -it daredata-postgres-container psql -U admin -d daredatachallenge
+    docker exec -it daredata-postgres-container psql -U admin -d daredatachallenge`
 
 
 
